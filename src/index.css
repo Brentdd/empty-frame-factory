@@ -204,6 +204,36 @@ All colors MUST be HSL.
   }
 }
 
+@layer base {
+  .playbook {
+    /* Scoped Playbook theme mapping */
+    --background: var(--playbook-bg);
+    --foreground: var(--playbook-fg);
+
+    --card: var(--playbook-card);
+    --card-foreground: var(--playbook-fg);
+
+    --popover: var(--playbook-card);
+    --popover-foreground: var(--playbook-fg);
+
+    --primary: var(--forest-green-medium);
+    --primary-foreground: var(--playbook-fg);
+
+    --secondary: var(--forest-green-medium);
+    --secondary-foreground: var(--playbook-fg);
+
+    --muted: var(--forest-green-light);
+    --muted-foreground: var(--playbook-muted-fg);
+
+    --accent: var(--golden-yellow);
+    --accent-foreground: var(--playbook-accent-dark);
+
+    --border: var(--playbook-card-border);
+    --input: var(--playbook-card-border);
+    --ring: var(--golden-yellow);
+  }
+}
+
 @layer utilities {
   @keyframes fadeInUp {
     from {

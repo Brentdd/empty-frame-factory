@@ -19,7 +19,7 @@ import {
 
 const Playbook = () => {
   return (
-    <div className="min-h-screen bg-[hsl(156,33%,12%)] text-white">
+    <div className="playbook min-h-screen bg-background text-foreground">
       {/* Hero Cover */}
       <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[hsl(156,33%,12%)] via-[hsl(156,28%,16%)] to-[hsl(156,28%,20%)] text-white px-6 relative overflow-hidden">
         {/* Background City Names */}
