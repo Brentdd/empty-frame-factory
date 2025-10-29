@@ -46,7 +46,7 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
-    /* Playbook Theme Colors */
+    /* Playbook Theme Colors - Exact from original */
     --playbook-bg: 156 33% 12%;
     --playbook-fg: 0 0% 100%;
     --playbook-card: 156 28% 16%;
@@ -55,6 +55,25 @@ All colors MUST be HSL.
     --playbook-accent-dark: 156 33% 12%;
     --playbook-muted: 156 20% 25%;
     --playbook-muted-fg: 0 0% 70%;
+    
+    /* Playbook Design Tokens */
+    --forest-green-dark: 156 33% 12%;
+    --forest-green-medium: 156 28% 16%;
+    --forest-green-light: 156 20% 25%;
+    --golden-yellow: 43 75% 58%;
+    --white: 0 0% 100%;
+    --light-gray: 0 0% 70%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(156, 33%, 12%) 0%, hsl(156, 28%, 16%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(156, 28%, 16%) 0%, hsl(156, 33%, 12%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -71,6 +90,118 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
+  
+  /* Playbook-specific typography */
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-serif-alt {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .font-modern {
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .font-modern-alt {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Playbook page number styling */
+  .page-number {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: hsl(var(--playbook-accent));
+  }
+  
+  /* Pull quote styling */
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.8;
+    border-left: 4px solid hsl(var(--playbook-accent));
+    padding-left: 2rem;
+    margin: 2rem 0;
+    color: hsl(var(--playbook-fg));
+  }
+  
+  /* Section divider */
+  .section-divider {
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--playbook-accent)) 50%,
+      transparent 100%
+    );
+    border: none;
+    margin: 2rem auto;
+  }
+  
+  /* Insight box */
+  .insight-box {
+    background: hsl(var(--playbook-card));
+    border: 1px solid hsl(var(--playbook-accent) / 0.2);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Primary button for playbook */
+  .btn-primary-evergrove {
+    background-color: hsl(var(--playbook-accent));
+    color: hsl(var(--playbook-accent-dark));
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .btn-primary-evergrove:hover {
+    background-color: hsl(var(--playbook-accent) / 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px hsl(var(--playbook-accent) / 0.3);
+  }
+  
+  /* Background city text */
+  .city-bg-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    font-weight: 900;
+    color: hsl(var(--playbook-fg) / 0.03);
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--playbook-bg));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--playbook-accent) / 0.3);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--playbook-accent) / 0.5);
+  }
 }
 
 @layer utilities {
@@ -82,6 +213,15 @@ All colors MUST be HSL.
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 
@@ -112,6 +252,14 @@ All colors MUST be HSL.
 
   .animate-fadeInUp {
     animation: fadeInUp 1s ease-out;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
   }
 
   .animate-pulse-slow {
