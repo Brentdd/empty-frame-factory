@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 156 33% 12%; /* Dark Forest Green #1a3128 */
+    --foreground: 0 0% 100%; /* White */
+
+    --card: 156 28% 16%; /* Slightly lighter green for cards */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 156 28% 16%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 156 33% 12%; /* Dark Forest Green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 156 28% 20%; /* Medium Dark Green */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 156 20% 25%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 43 75% 58%; /* Golden Yellow #d4a747 */
+    --accent-foreground: 156 33% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 156 20% 25%;
+    --input: 156 20% 25%;
+    --ring: 43 75% 58%;
+
+    --radius: 0.5rem;
+
+    /* Evergrove design tokens */
+    --forest-green-dark: 156 33% 12%;
+    --forest-green-medium: 156 28% 20%;
+    --golden-yellow: 43 75% 58%;
+    --white: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(156 33% 12%), hsl(156 28% 16%));
+    --gradient-section: linear-gradient(180deg, hsl(156 28% 16%), hsl(156 33% 12%));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern", "liga", "calt";
+  }
+
+  /* Typography */
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-serif-alt {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-modern {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-modern-alt {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Page number styling */
+  .page-number {
+    @apply font-serif text-accent text-sm tracking-widest;
+  }
+
+  /* Pull quote styling */
+  .pull-quote {
+    @apply font-serif-alt italic text-2xl md:text-3xl leading-relaxed;
+    border-left: 3px solid hsl(var(--accent));
+    padding-left: 2rem;
+  }
+
+  /* Section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, hsl(var(--accent)), transparent);
+  }
+
+  /* Insight box */
+  .insight-box {
+    @apply bg-card border-2 border-accent/30 rounded-lg p-6 md:p-8;
+  }
+
+  /* Golden CTA Button */
+  .btn-primary-evergrove {
+    @apply bg-accent text-accent-foreground font-bold px-8 py-3 rounded-full hover:bg-accent/90 transition-all duration-300;
+  }
+
+  /* City Background Text */
+  .city-bg-text {
+    @apply text-6xl md:text-8xl lg:text-9xl font-bold select-none pointer-events-none;
+    color: rgba(26, 79, 64, 0.3);
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
