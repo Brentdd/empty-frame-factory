@@ -1,2 +1,1 @@
-/playbook      https://thriving-taffy-71d71c.netlify.app        301
-/playbook/*    https://thriving-taffy-71d71c.netlify.app/:splat 301
+# Playbook now hosted natively at /playbook route
