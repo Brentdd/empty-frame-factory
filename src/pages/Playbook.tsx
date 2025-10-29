@@ -19,9 +19,9 @@ import {
 
 const Playbook = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[hsl(156,33%,12%)] text-white">
       {/* Hero Cover */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-primary via-primary to-secondary text-foreground px-6 relative overflow-hidden">
+      <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[hsl(156,33%,12%)] via-[hsl(156,28%,16%)] to-[hsl(156,28%,20%)] text-white px-6 relative overflow-hidden">
         {/* Background City Names */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="absolute top-10 md:top-20 left-4 md:left-10 city-bg-text">Paris</div>
