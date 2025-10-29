@@ -45,6 +45,16 @@ All colors MUST be HSL.
     --ring: 45 69% 52%;
 
     --radius: 1rem;
+
+    /* Playbook Theme Colors */
+    --playbook-bg: 156 33% 12%;
+    --playbook-fg: 0 0% 100%;
+    --playbook-card: 156 28% 16%;
+    --playbook-card-border: 156 20% 25%;
+    --playbook-accent: 43 75% 58%;
+    --playbook-accent-dark: 156 33% 12%;
+    --playbook-muted: 156 20% 25%;
+    --playbook-muted-fg: 0 0% 70%;
   }
 }
 
