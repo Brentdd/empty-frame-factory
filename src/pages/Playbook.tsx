@@ -62,10 +62,10 @@ const Playbook = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="btn-primary-evergrove">Explore brands</button>
-            <button className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-primary transition-all duration-300">
+            <a href="#brands" className="btn-primary-evergrove" aria-label="Explore brands section">Explore brands</a>
+            <a href="#contact" className="border-2 border-accent text-accent font-bold px-8 py-3 rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300" aria-label="Partner with Evergrove">
               Partner with us
-            </button>
+            </a>
           </div>
         </div>
         <div className="absolute bottom-8 page-number text-accent">
@@ -173,7 +173,7 @@ const Playbook = () => {
       </div>
 
       {/* PART I - THE 24 BRANDS */}
-      <div className="bg-gradient-to-b from-background to-secondary/30 py-20">
+      <div id="brands" className="bg-gradient-to-b from-background to-secondary/30 py-20">
         <PageContainer>
           <div className="text-center mb-20">
             <div className="page-number mb-6 text-accent">PART I</div>
@@ -2870,7 +2870,7 @@ const Playbook = () => {
       </PageContainer>
 
       {/* PART IV - READY TO GO EUROPEAN */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-primary via-primary to-secondary text-foreground px-6 py-20 mt-32">
+      <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-primary via-primary to-secondary text-foreground px-6 py-20 mt-32">
         <div className="max-w-7xl w-full">
           <div className="text-center mb-16">
             <div className="page-number mb-12 text-accent">PARTNER WITH EVERGROVE</div>
