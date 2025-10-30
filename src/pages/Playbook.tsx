@@ -1834,7 +1834,7 @@ const Playbook = () => {
       <div className="bg-background py-20">
         <PageContainer>
           <div className="text-center mb-20">
-            <h2 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-6">
+            <h2 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
               The Framework
             </h2>
             <p className="font-serif-alt text-xl italic text-muted-foreground max-w-3xl mx-auto">
@@ -2877,7 +2877,7 @@ const Playbook = () => {
             <h2 className="font-modern text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-accent">
               READY TO GO EUROPEAN?
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto">
               We help founders go from local to European — beautifully, profitably, and fast.
             </p>
           </div>

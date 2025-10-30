@@ -216,8 +216,8 @@ All colors MUST be HSL.
     --popover: var(--playbook-card);
     --popover-foreground: var(--playbook-fg);
 
-    --primary: var(--playbook-fg);
-    --primary-foreground: var(--playbook-bg);
+    --primary: var(--forest-green-medium);
+    --primary-foreground: var(--playbook-fg);
 
     --secondary: var(--forest-green-medium);
     --secondary-foreground: var(--playbook-fg);
@@ -232,6 +232,9 @@ All colors MUST be HSL.
     --input: var(--playbook-card-border);
     --ring: var(--golden-yellow);
   }
+  /* Playbook-specific text color overrides */
+  .playbook h2.text-primary { color: hsl(var(--foreground)); }
+  .playbook h4.text-primary { color: hsl(var(--accent)); }
 }
 
 @layer utilities {
