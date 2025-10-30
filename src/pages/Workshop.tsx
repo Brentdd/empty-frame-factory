@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Check, Calendar, Clock, Users } from "lucide-react";
+import { Check, Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import workshopHero from "@/assets/workshop-hero.png";
 import evergroveLogo from "@/assets/evergrove-logo-white.png";
@@ -9,6 +9,35 @@ import evergroveLogo from "@/assets/evergrove-logo-white.png";
 const Workshop = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const targetDate = new Date("2026-02-01T10:00:00Z").getTime();
+    
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+      
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,31 +61,54 @@ const Workshop = () => {
 
       {/* Main Content */}
       <main className="py-12 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Hero Card */}
-          <div className="bg-cream rounded-3xl shadow-elegant overflow-hidden">
+          <div className="bg-cream rounded-[40px] shadow-elegant overflow-hidden">
             {/* Countdown Banner */}
-            <div className="bg-primary text-cream px-6 py-4 text-center font-semibold flex items-center justify-center gap-3">
-              <Clock className="w-5 h-5 text-gold" />
-              <span>Limited Seats Available • Register Now</span>
+            <div className="bg-forest text-cream px-8 py-6 mx-8 mt-8 rounded-[30px] text-center font-semibold">
+              <div className="flex items-center justify-center gap-4 flex-wrap">
+                <span className="text-lg">Live Workshop Starts In:</span>
+                <div className="flex gap-3">
+                  <div className="bg-slate/30 rounded-xl px-4 py-2 min-w-[70px]">
+                    <div className="text-3xl font-bold">{String(timeLeft.days).padStart(2, '0')}</div>
+                    <div className="text-xs uppercase tracking-wider opacity-80">Days</div>
+                  </div>
+                  <div className="bg-slate/30 rounded-xl px-4 py-2 min-w-[70px]">
+                    <div className="text-3xl font-bold">{String(timeLeft.hours).padStart(2, '0')}</div>
+                    <div className="text-xs uppercase tracking-wider opacity-80">Hours</div>
+                  </div>
+                  <div className="bg-slate/30 rounded-xl px-4 py-2 min-w-[70px]">
+                    <div className="text-3xl font-bold">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                    <div className="text-xs uppercase tracking-wider opacity-80">Mins</div>
+                  </div>
+                  <div className="bg-slate/30 rounded-xl px-4 py-2 min-w-[70px]">
+                    <div className="text-3xl font-bold">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                    <div className="text-xs uppercase tracking-wider opacity-80">Secs</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="p-8 md:p-12 text-center">
               {/* Headline */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-forest mb-6 leading-tight">
-                24 Ukrainian Brands Cracked Europe - <span className="text-gold">Here's How</span>
+                Launch your <span className="text-gold">Brand in Europe</span>
               </h1>
 
-              <p className="text-xl text-slate font-semibold mb-8">
-                Join our exclusive workshop and learn the proven strategies
+              <p className="text-2xl text-slate font-semibold mb-4">
+                How 24 Ukrainian Brands Cracked Europe (And How You Can Too)
+              </p>
+              
+              <p className="text-xl text-slate mb-8">
+                Live 90-Minute Workshop
               </p>
 
               {/* Visual/Image */}
-              <div className="my-12 relative">
+              <div className="my-12 bg-forest rounded-[30px] p-6">
                 <img 
                   src={workshopHero} 
                   alt="Workshop Preview" 
-                  className="w-full max-w-2xl mx-auto rounded-2xl shadow-card"
+                  className="w-full rounded-[20px] shadow-card"
                 />
               </div>
 
@@ -88,6 +140,17 @@ const Workshop = () => {
                 </div>
               )}
 
+              {/* Workshop Details */}
+              <div className="border-l-4 border-gold pl-8 py-6 mt-12 max-w-2xl mx-auto text-left">
+                <div className="flex items-start gap-4 text-slate text-lg mb-2">
+                  <Calendar className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
+                  <span className="font-semibold">[DATE] | </span>
+                  <Clock className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
+                  <span className="font-semibold">[TIME] CET</span>
+                </div>
+                <p className="text-slate text-lg ml-10">60 min workshop + 30 min Q&A</p>
+              </div>
+
               {/* Benefits */}
               <div className="text-left max-w-lg mx-auto space-y-4 mt-12">
                 <h3 className="text-2xl font-bold text-forest mb-6 text-center">What You'll Learn:</h3>
@@ -105,25 +168,6 @@ const Workshop = () => {
                     <p className="text-slate text-lg">{benefit}</p>
                   </div>
                 ))}
-              </div>
-
-              {/* Workshop Details */}
-              <div className="grid md:grid-cols-3 gap-6 mt-12 pt-12 border-t border-sage/30">
-                <div className="flex flex-col items-center gap-2">
-                  <Calendar className="w-8 h-8 text-gold" />
-                  <p className="font-bold text-forest">Date</p>
-                  <p className="text-slate text-sm">TBA - Early 2026</p>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Clock className="w-8 h-8 text-gold" />
-                  <p className="font-bold text-forest">Duration</p>
-                  <p className="text-slate text-sm">3 Hours</p>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Users className="w-8 h-8 text-gold" />
-                  <p className="font-bold text-forest">Format</p>
-                  <p className="text-slate text-sm">Online + In-Person</p>
-                </div>
               </div>
             </div>
 
