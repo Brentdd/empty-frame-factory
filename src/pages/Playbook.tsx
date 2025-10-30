@@ -81,20 +81,20 @@ const Playbook = () => {
           subtitle="A Foreword from Evergrove"
         />
         
-        <div className="prose prose-lg max-w-none leading-relaxed">
-          <p className="text-xl md:text-2xl font-modern-alt leading-relaxed mb-8">
+        <div className="prose prose-lg max-w-none leading-relaxed text-foreground">
+          <p className="text-xl md:text-2xl font-modern-alt leading-relaxed mb-8 text-foreground">
             This is not a summary. This is not a listicle. This is a premium, editorial-grade business publication designed for founders who are building for real.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-foreground">
             Every year, thousands of Ukrainian brands dream of entering European markets. Most struggle to find the path. A select few break through—not through luck, but through deliberate strategy, resilience, and an intimate understanding of what European buyers actually want.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-foreground">
             This playbook profiles 24 Ukrainian brands that successfully expanded into Europe. Each earned its place not through vanity metrics, but through diversified revenue streams, proven distribution networks, and the kind of operational excellence that turns skeptical buyers into long-term partners.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-foreground">
             You'll find fashion houses that now sit alongside Chanel in Parisian boutiques. Beauty brands stocked in 20+ countries. Furniture designers represented by the world's top galleries. Vodka that outsells Russian competitors in duty-free shops across Europe. And logistics companies that opened 128 European branches in under three years.
           </p>
         </div>
@@ -105,16 +105,16 @@ const Playbook = () => {
           </p>
         </InsightBox>
 
-        <div className="prose prose-lg max-w-none leading-relaxed mt-8">
-          <p className="mb-6">
+        <div className="prose prose-lg max-w-none leading-relaxed mt-8 text-foreground">
+          <p className="mb-6 text-foreground">
             Each deep-dive in this playbook covers the brand's founding story, products, business model, European go-to-market strategy, distribution channels, operational tactics, branding evolution, and—most importantly—what we can learn from their approach.
           </p>
           
-          <p className="mb-6">
+          <p className="mb-6 text-foreground">
             The brands are organized by sector: Fashion & Accessories, Beauty & Wellness, Home & Design, Food & Beverage, and Tech & Logistics. All insights are supported by primary sources from press, brand sites, and industry reports.
           </p>
           
-          <p className="text-xl font-modern-alt italic mt-12 text-center">
+          <p className="text-xl font-modern-alt italic mt-12 text-center text-foreground">
             This is the playbook. These are the 24 that made it.
           </p>
         </div>
