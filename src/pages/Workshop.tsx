@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Check, Calendar, Clock } from "lucide-react";
+import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import workshopHero from "@/assets/workshop-hero.png";
 import evergroveLogo from "@/assets/evergrove-logo-white.png";
@@ -140,26 +140,13 @@ const Workshop = () => {
                 </div>
               )}
 
-              {/* Workshop Details */}
-              <div className="border-l-4 border-gold pl-8 py-6 mt-12 max-w-2xl mx-auto text-left">
-                <div className="flex items-start gap-4 text-slate text-lg mb-2">
-                  <Calendar className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                  <span className="font-semibold">[DATE] | </span>
-                  <Clock className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                  <span className="font-semibold">[TIME] CET</span>
-                </div>
-                <p className="text-slate text-lg ml-10">60 min workshop + 30 min Q&A</p>
-              </div>
-
               {/* Benefits */}
               <div className="text-left max-w-lg mx-auto space-y-4 mt-12">
                 <h3 className="text-2xl font-bold text-forest mb-6 text-center">What You'll Learn:</h3>
                 {[
-                  "Proven market entry strategies for European markets",
-                  "Real case studies from 24 successful Ukrainian brands",
-                  "Expert insights on overcoming regulatory challenges",
-                  "Networking opportunities with industry veterans",
-                  "Actionable frameworks you can implement immediately"
+                  "See exactly how 24 Ukrainian brands entered Europe and won",
+                  "Learn the expensive mistakes they made (save yourself €47K+ and 6 months)",
+                  "Get the complete playbook FREE (€1,350 value - yours just for attending)"
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-forest flex items-center justify-center flex-shrink-0 mt-1">
