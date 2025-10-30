@@ -252,6 +252,10 @@ All colors MUST be HSL.
   .playbook .bg-primary { 
     background-color: hsl(var(--forest-green-medium)); 
   }
+  /* Preserve button text colors */
+  .playbook .btn-primary-evergrove { 
+    color: hsl(var(--playbook-accent-dark)) !important; 
+  }
 }
 
 @layer utilities {
