@@ -232,9 +232,26 @@ All colors MUST be HSL.
     --input: var(--playbook-card-border);
     --ring: var(--golden-yellow);
   }
-  /* Playbook-specific text color overrides */
-  .playbook h2.text-primary { color: hsl(var(--foreground)); }
-  .playbook h4.text-primary { color: hsl(var(--accent)); }
+  
+  /* Playbook readability reset - ensures all text is visible by default */
+  .playbook :where(h1,h2,h3,h4,h5,h6,p,li,span,strong,em,blockquote,small) { 
+    color: hsl(var(--foreground));
+  }
+  .playbook a { 
+    color: hsl(var(--accent)); 
+  }
+  .playbook .text-primary { 
+    color: hsl(var(--foreground)) !important; 
+  }
+  .playbook .text-muted-foreground { 
+    color: hsl(var(--playbook-muted-fg)) !important; 
+  }
+  .playbook .bg-card { 
+    background-color: hsl(var(--playbook-card)); 
+  }
+  .playbook .bg-primary { 
+    background-color: hsl(var(--forest-green-medium)); 
+  }
 }
 
 @layer utilities {

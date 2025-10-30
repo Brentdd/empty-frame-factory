@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import evergroveLogo from "@/assets/evergrove-logo-white.png";
 import { PageContainer } from "@/components/playbook/PageContainer";
 import { SectionHeader } from "@/components/playbook/SectionHeader";
@@ -18,6 +19,10 @@ import {
 } from "lucide-react";
 
 const Playbook = () => {
+  useEffect(() => {
+    console.log("✅ Playbook mounted successfully");
+  }, []);
+
   return (
     <div className="playbook min-h-screen bg-background text-foreground">
       {/* Hero Cover */}
