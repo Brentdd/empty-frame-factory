@@ -178,7 +178,7 @@ All colors MUST be HSL.
     font-family: 'Playfair Display', serif;
     font-size: 8rem;
     font-weight: 900;
-    color: hsl(var(--playbook-fg) / 0.03);
+    color: hsl(var(--playbook-fg) / 0.05);
     position: absolute;
     z-index: 0;
     pointer-events: none;
@@ -216,8 +216,8 @@ All colors MUST be HSL.
     --popover: var(--playbook-card);
     --popover-foreground: var(--playbook-fg);
 
-    --primary: var(--forest-green-medium);
-    --primary-foreground: var(--playbook-fg);
+    --primary: var(--playbook-fg);
+    --primary-foreground: var(--playbook-bg);
 
     --secondary: var(--forest-green-medium);
     --secondary-foreground: var(--playbook-fg);
