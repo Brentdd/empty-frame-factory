@@ -7,6 +7,8 @@ import workshopHero from "@/assets/workshop-hero.png";
 import evergroveLogo from "@/assets/evergrove-logo-white.png";
 
 const Workshop = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
@@ -17,7 +19,7 @@ const Workshop = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2026-02-01T10:00:00Z").getTime();
+    const targetDate = new Date("2025-11-15T17:00:00Z").getTime();
     
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -41,8 +43,26 @@ const Workshop = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Add form submission logic here
+    
+    if (!firstName.trim() || !lastName.trim() || !email.trim()) {
+      return;
+    }
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => {
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error("Form submission error:", error);
+        alert("There was an error submitting the form. Please try again.");
+      });
   };
 
   return (
@@ -114,14 +134,41 @@ const Workshop = () => {
 
               {/* Form */}
               {!submitted ? (
-                <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8">
+                <form 
+                  onSubmit={handleSubmit} 
+                  className="max-w-md mx-auto mb-8 space-y-4"
+                  data-netlify="true"
+                  name="workshop-registration"
+                  method="POST"
+                >
+                  <input type="hidden" name="form-name" value="workshop-registration" />
+                  
+                  <Input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                    className="text-center h-14 text-lg border-2 border-sage focus:border-gold rounded-full"
+                  />
+                  <Input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    required
+                    className="text-center h-14 text-lg border-2 border-sage focus:border-gold rounded-full"
+                  />
                   <Input
                     type="email"
-                    placeholder="Enter your email"
+                    name="email"
+                    placeholder="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="mb-4 text-center h-14 text-lg border-2 border-sage focus:border-gold rounded-full"
+                    className="text-center h-14 text-lg border-2 border-sage focus:border-gold rounded-full"
                   />
                   <Button
                     type="submit"
@@ -136,7 +183,7 @@ const Workshop = () => {
                     <Check className="w-6 h-6 text-gold" />
                     <p className="text-xl font-bold">Registration Confirmed!</p>
                   </div>
-                  <p className="text-slate">We'll send you the workshop details shortly.</p>
+                  <p className="text-slate">Thanks {firstName}! We'll send the workshop details to {email} shortly.</p>
                 </div>
               )}
 
