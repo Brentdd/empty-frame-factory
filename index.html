@@ -251,6 +251,30 @@
   </head>
 
   <body>
+    <!-- Hidden forms for Netlify form detection -->
+    <!-- Workshop Registration Form -->
+    <form name="workshop-registration" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+    </form>
+
+    <!-- Workshop UA Registration Form -->
+    <form name="workshop-registration-ua" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="hidden" name="language" />
+    </form>
+
+    <!-- Contact Form (Playbook) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="interest" />
+    </form>
+
     <div id="root"></div>
     <script>
       // Restore path from 404 redirect for SPAs on static hosts
