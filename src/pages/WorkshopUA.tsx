@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import workshopHero from "@/assets/workshop-hero.png";
+import workshopHero from "@/assets/workshop-billboard.png";
 import evergroveLogo from "@/assets/evergrove-logo-white.png";
 
 const WorkshopUA = () => {
