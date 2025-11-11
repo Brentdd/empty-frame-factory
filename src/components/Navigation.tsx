@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import evergroveLogo from "@/assets/evergrove-logo-desktop.svg";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const Navigation = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -48,7 +51,7 @@ export const Navigation = () => {
               isScrolled ? "text-white/90" : "text-white/90"
             }`}
           >
-            How It Works
+            {t('navigation.howItWorks')}
           </button>
           <button
             onClick={() => scrollToSection("partnerships")}
@@ -56,7 +59,7 @@ export const Navigation = () => {
               isScrolled ? "text-white/90" : "text-white/90"
             }`}
           >
-            Partnerships
+            {t('navigation.partnerships')}
           </button>
           <button
             onClick={() => scrollToSection("faq")}
@@ -64,15 +67,16 @@ export const Navigation = () => {
               isScrolled ? "text-white/90" : "text-white/90"
             }`}
           >
-            FAQ
+            {t('navigation.faq')}
           </button>
+          <LanguageSwitcher />
           <Button
             variant="hero"
             size="lg"
             onClick={() => scrollToSection("contact")}
             className={isScrolled ? "bg-gold hover:bg-gold/90 text-forest" : ""}
           >
-            Let's Talk
+            {t('navigation.letsTalk')}
           </Button>
         </div>
 
@@ -92,27 +96,30 @@ export const Navigation = () => {
                 onClick={() => scrollToSection("how-it-works")}
                 className="text-left text-lg font-medium text-white/90 hover:text-gold transition-colors py-3 px-4 hover:bg-white/5 rounded-lg"
               >
-                How It Works
+                {t('navigation.howItWorks')}
               </button>
               <button
                 onClick={() => scrollToSection("partnerships")}
                 className="text-left text-lg font-medium text-white/90 hover:text-gold transition-colors py-3 px-4 hover:bg-white/5 rounded-lg"
               >
-                Partnerships
+                {t('navigation.partnerships')}
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
                 className="text-left text-lg font-medium text-white/90 hover:text-gold transition-colors py-3 px-4 hover:bg-white/5 rounded-lg"
               >
-                FAQ
+                {t('navigation.faq')}
               </button>
+              <div className="px-4 py-3">
+                <LanguageSwitcher />
+              </div>
               <Button
                 variant="hero"
                 size="lg"
                 onClick={() => scrollToSection("contact")}
                 className="w-full mt-4"
               >
-                Let's Talk
+                {t('navigation.letsTalk')}
               </Button>
             </div>
           </SheetContent>

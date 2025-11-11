@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import workshopHero from "@/assets/workshop-billboard.png";
 import evergroveLogo from "@/assets/evergrove-logo-white.png";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { SEOHelmet } from "@/components/SEOHelmet";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Workshop = () => {
   const [firstName, setFirstName] = useState("");

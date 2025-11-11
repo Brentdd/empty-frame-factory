@@ -1,4 +1,11 @@
+import { useTranslation } from "@/hooks/useTranslation";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
+  const { t, language } = useTranslation();
+  const linkPrefix = language === 'ua' ? '/ua' : '';
+  
   return (
     <footer className="bg-slate text-white py-12 md:py-16 px-4 md:px-8" role="contentinfo">
       <div className="max-w-[1200px] mx-auto">
@@ -17,63 +24,71 @@ export const Footer = () => {
             </p>
           </div>
           <nav aria-label="Brand resources">
-            <h4 className="text-sm md:text-base font-semibold mb-3">For Brands</h4>
+            <h4 className="text-sm md:text-base font-semibold mb-3">{t('homepage.footer.brands')}</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#how-it-works" className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
-                  How It Works
+                  {t('navigation.howItWorks')}
                 </a>
               </li>
               <li>
                 <a href="#partnerships" className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
-                  Partnership Models
+                  {t('navigation.partnerships')}
                 </a>
               </li>
               <li>
                 <a href="#faq" className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
-                  FAQ
+                  {t('navigation.faq')}
                 </a>
               </li>
             </ul>
           </nav>
           <nav aria-label="Company information">
-            <h4 className="text-sm md:text-base font-semibold mb-3">Company</h4>
+            <h4 className="text-sm md:text-base font-semibold mb-3">{t('homepage.footer.company')}</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
-                  About
+                  {t('homepage.footer.about')}
                 </a>
+              </li>
+              <li>
+                <Link to={`${linkPrefix}/playbook`} className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
+                  {t('homepage.footer.playbook')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`${linkPrefix}/workshop`} className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
+                  {t('homepage.footer.workshop')}
+                </Link>
               </li>
               <li>
                 <a href="#contact" className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors text-sm md:text-base py-1 inline-block">
-                  Blog
+                  {t('homepage.footer.contact')}
                 </a>
               </li>
             </ul>
           </nav>
           <aside>
-            <h4 className="text-sm md:text-base font-semibold mb-3">Why Belgium?</h4>
+            <h4 className="text-sm md:text-base font-semibold mb-3">{t('homepage.footer.whyBelgium')}</h4>
             <p className="text-white/70 text-sm">
-              Central EU location. Multilingual market. Perfect testing ground before European expansion.
+              {t('homepage.footer.whyBelgiumText')}
             </p>
           </aside>
         </div>
 
-        <div className="pt-6 md:pt-8 border-t border-white/20 text-center text-white/60 text-xs md:text-sm space-y-2">
-          <p>© 2025 Evergrove Global. All rights reserved.</p>
-          <p className="flex gap-4 justify-center items-center flex-wrap">
-            <a href="/privacy-policy" className="hover:text-white transition-colors py-2 px-1 min-h-[40px] flex items-center">
-              Privacy Policy
-            </a>
+        <div className="pt-6 md:pt-8 border-t border-white/20 space-y-4">
+          <div className="flex justify-center">
+            <LanguageSwitcher />
+          </div>
+          <p className="text-center text-white/60 text-xs md:text-sm">© 2025 {t('homepage.footer.copyright')}</p>
+          <p className="flex gap-4 justify-center items-center flex-wrap text-white/60 text-xs md:text-sm">
+            <Link to={`${linkPrefix}/privacy-policy`} className="hover:text-white transition-colors py-2 px-1 min-h-[40px] flex items-center">
+              {t('homepage.footer.privacyPolicy')}
+            </Link>
             <span>·</span>
-            <a href="/terms-of-service" className="hover:text-white transition-colors py-2 px-1 min-h-[40px] flex items-center">
-              Terms of Service
-            </a>
+            <Link to={`${linkPrefix}/terms-of-service`} className="hover:text-white transition-colors py-2 px-1 min-h-[40px] flex items-center">
+              {t('homepage.footer.termsOfService')}
+            </Link>
           </p>
         </div>
       </div>
