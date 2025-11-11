@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const cities = [
   { name: "Paris", left: "10%", top: "20%", delay: "0s" },
@@ -9,6 +10,8 @@ const cities = [
 ];
 
 export const HeroSection = () => {
+  const { t } = useTranslation();
+  
   const scrollToNext = () => {
     document.getElementById("dream")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -40,17 +43,17 @@ export const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 max-w-[1200px] px-4 md:px-8">
         <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 animate-fadeInUp">
-          You make it.
+          {t('homepage.hero.headline')}
           <br />
-          <span className="text-gold">We get it to the cities it belongs in.</span>
+          <span className="text-gold">{t('homepage.hero.subheadline')}</span>
         </h1>
         <p
           className="text-lg md:text-2xl text-white/90 mb-8 md:mb-12 leading-relaxed"
           style={{ animation: "fadeInUp 1s ease-out 0.2s both" }}
         >
-          Your brand in Madrid. Paris. Milan. Brussels. Amsterdam. London.
+          {t('homepage.hero.description1')}
           <br />
-          Without the complexity, compliance headaches, or capital requirements.
+          {t('homepage.hero.description2')}
         </p>
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -64,7 +67,7 @@ export const HeroSection = () => {
             }
             className="w-full sm:w-auto min-h-[48px]"
           >
-            Let's Talk
+            {t('homepage.hero.cta1')}
           </Button>
           <Button
             variant="hero-outline"
@@ -74,7 +77,7 @@ export const HeroSection = () => {
             }
             className="w-full sm:w-auto min-h-[48px]"
           >
-            How It Works
+            {t('homepage.hero.cta2')}
           </Button>
         </div>
       </div>

@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const CookieBanner = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const cookieConsent = localStorage.getItem("evergrove-cookie-consent");
     if (!cookieConsent) {
-      // Show banner after a short delay for better UX
       setTimeout(() => setIsVisible(true), 1000);
     }
   }, []);
@@ -30,15 +31,14 @@ export const CookieBanner = () => {
       <div className="bg-forest/95 backdrop-blur-sm border border-gold/20 rounded-lg shadow-2xl p-6">
         <div className="flex items-start gap-4">
           <div className="flex-1">
-            <h3 className="text-cream font-semibold mb-2">Cookie Notice</h3>
+            <h3 className="text-cream font-semibold mb-2">{t('common.cookieBanner.title')}</h3>
             <p className="text-cream/80 text-sm mb-4">
-              We use cookies to enhance your browsing experience and analyze site traffic. 
-              By clicking "Accept", you consent to our use of cookies.{" "}
+              {t('common.cookieBanner.message')}{" "}
               <a 
                 href="/privacy-policy" 
                 className="text-gold hover:text-gold/80 underline transition-colors"
               >
-                Learn more
+                {t('common.cookieBanner.learnMore')}
               </a>
             </p>
             <div className="flex flex-wrap gap-3">
@@ -47,7 +47,7 @@ export const CookieBanner = () => {
                 className="bg-gold text-forest hover:bg-gold/90"
                 size="sm"
               >
-                Accept
+                {t('common.cookieBanner.accept')}
               </Button>
               <Button
                 onClick={handleDecline}
@@ -55,7 +55,7 @@ export const CookieBanner = () => {
                 className="border border-cream/30 text-cream hover:bg-cream/10 hover:text-cream"
                 size="sm"
               >
-                Decline
+                {t('common.cookieBanner.decline')}
               </Button>
             </div>
           </div>

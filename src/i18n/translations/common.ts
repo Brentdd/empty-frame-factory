@@ -9,7 +9,14 @@ export const commonTranslations = {
     readMore: "Read More",
     learnMore: "Learn More",
     getStarted: "Get Started",
-    contactUs: "Contact Us"
+    contactUs: "Contact Us",
+    cookieBanner: {
+      title: "Cookie Notice",
+      message: "We use cookies to enhance your browsing experience and analyze site traffic. By clicking \"Accept\", you consent to our use of cookies.",
+      learnMore: "Learn more",
+      accept: "Accept",
+      decline: "Decline"
+    }
   },
   ua: {
     backToHome: "Повернутися на головну",
@@ -21,6 +28,13 @@ export const commonTranslations = {
     readMore: "Читати далі",
     learnMore: "Дізнатися більше",
     getStarted: "Почати",
-    contactUs: "Зв'язатися з нами"
+    contactUs: "Зв'язатися з нами",
+    cookieBanner: {
+      title: "Повідомлення про файли cookie",
+      message: "Ми використовуємо файли cookie для покращення вашого досвіду перегляду та аналізу трафіку сайту. Натискаючи \"Прийняти\", ви даєте згоду на використання файлів cookie.",
+      learnMore: "Дізнатися більше",
+      accept: "Прийняти",
+      decline: "Відхилити"
+    }
   }
 };

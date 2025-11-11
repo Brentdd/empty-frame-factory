@@ -1,24 +1,28 @@
-const cities = [
-  { name: "Brussels", description: "EU decision-makers and concept stores" },
-  { name: "Amsterdam", description: "Design-forward premium consumers" },
-  { name: "Paris", description: "Where exceptional artisanship belongs" },
-  { name: "London", description: "A market embracing brands with stories" },
-  { name: "Madrid", description: "Untapped hunger for authentic craft" },
-  { name: "Milan", description: "Quality speaks louder than budgets" },
-  { name: "Zurich", description: "Consumers seeking products with meaning" },
-  { name: "Geneva", description: "High-value consumer market" },
-];
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const CitiesSection = () => {
+  const { t } = useTranslation();
+  
+  const cities = [
+    { name: t('homepage.cities.brussels.name'), description: t('homepage.cities.brussels.description') },
+    { name: t('homepage.cities.amsterdam.name'), description: t('homepage.cities.amsterdam.description') },
+    { name: t('homepage.cities.paris.name'), description: t('homepage.cities.paris.description') },
+    { name: t('homepage.cities.london.name'), description: t('homepage.cities.london.description') },
+    { name: t('homepage.cities.madrid.name'), description: t('homepage.cities.madrid.description') },
+    { name: t('homepage.cities.milan.name'), description: t('homepage.cities.milan.description') },
+    { name: t('homepage.cities.zurich.name'), description: t('homepage.cities.zurich.description') },
+    { name: t('homepage.cities.geneva.name'), description: t('homepage.cities.geneva.description') },
+  ];
+
   return (
     <article className="bg-forest text-white py-32 px-8" id="how-it-works">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6">
-            The Cities Your Products Deserve
+            {t('homepage.cities.title')}
           </h2>
           <p className="text-xl text-white/80 max-w-[800px] mx-auto">
-            We don't just get you into "Europe." We get you into the Europe that matters for your brand.
+            {t('homepage.cities.subtitle')}
           </p>
         </div>
 
@@ -35,9 +39,9 @@ export const CitiesSection = () => {
         </div>
 
         <p className="text-center text-2xl font-bold mt-12 leading-relaxed">
-          Your products are already good enough for these markets.
+          {t('homepage.cities.closing1')}
           <br />
-          <span className="text-gold">You just need someone who knows how to get them there.</span>
+          <span className="text-gold">{t('homepage.cities.closing2')}</span>
         </p>
       </div>
     </article>
