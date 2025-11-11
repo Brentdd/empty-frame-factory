@@ -1,21 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- English Homepage -->
   <url>
     <loc>https://evergroveglobal.com/</loc>
-    <lastmod>2025-10-20</lastmod>
+    <lastmod>2025-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/" />
   </url>
+  
+  <!-- Ukrainian Homepage -->
+  <url>
+    <loc>https://evergroveglobal.com/ua/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/" />
+  </url>
+  
+  <!-- English Workshop -->
+  <url>
+    <loc>https://evergroveglobal.com/workshop</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/workshop" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/workshop" />
+  </url>
+  
+  <!-- Ukrainian Workshop -->
+  <url>
+    <loc>https://evergroveglobal.com/ua/workshop</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/workshop" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/workshop" />
+  </url>
+  
+  <!-- English Playbook -->
+  <url>
+    <loc>https://evergroveglobal.com/playbook</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/playbook" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/playbook" />
+  </url>
+  
+  <!-- Ukrainian Playbook -->
+  <url>
+    <loc>https://evergroveglobal.com/ua/playbook</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/playbook" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/playbook" />
+  </url>
+  
+  <!-- English Privacy Policy -->
   <url>
     <loc>https://evergroveglobal.com/privacy-policy</loc>
-    <lastmod>2025-10-20</lastmod>
+    <lastmod>2025-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/privacy-policy" />
   </url>
+  
+  <!-- Ukrainian Privacy Policy -->
+  <url>
+    <loc>https://evergroveglobal.com/ua/privacy-policy</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/privacy-policy" />
+  </url>
+  
+  <!-- English Terms of Service -->
   <url>
     <loc>https://evergroveglobal.com/terms-of-service</loc>
-    <lastmod>2025-10-20</lastmod>
+    <lastmod>2025-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/terms-of-service" />
+  </url>
+  
+  <!-- Ukrainian Terms of Service -->
+  <url>
+    <loc>https://evergroveglobal.com/ua/terms-of-service</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://evergroveglobal.com/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://evergroveglobal.com/ua/terms-of-service" />
   </url>
 </urlset>
