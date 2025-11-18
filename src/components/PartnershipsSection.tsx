@@ -28,7 +28,7 @@ export const PartnershipsSection = () => {
     {
       icon: t('homepage.partnerships.revenue.icon'),
       title: t('homepage.partnerships.revenue.title'),
-      badge: t('homepage.partnerships.revenue.badge'),
+      badge: t('homepage.partnerships.revenue.badge') || null,
       subtitle: t('homepage.partnerships.revenue.subtitle'),
       description: t('homepage.partnerships.revenue.description'),
       highlight: t('homepage.partnerships.revenue.highlight'),
