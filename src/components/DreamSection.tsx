@@ -22,7 +22,7 @@ export const DreamSection = () => {
           />
           <div className="text-lg leading-relaxed space-y-6">
             <p>
-              {t('homepage.dream.paragraph1').split('. ')[0]}. <strong className="text-forest font-bold">{t('homepage.dream.paragraph1').split('. ')[1]}.</strong>
+              {t('homepage.dream.paragraph1').split('. ')[0]}. <strong className="text-forest font-bold">{t('homepage.dream.paragraph1').split('. ')[1]}</strong>
             </p>
             <p>{t('homepage.dream.paragraph2')}</p>
             <p>{t('homepage.dream.paragraph3')}</p>
